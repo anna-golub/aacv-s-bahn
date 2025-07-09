@@ -1,0 +1,40 @@
+training & testing only on st_name == True:
+model ViT_7_ep3_seed17_lr2.5e-04_only_st_name.pt
+
+Average Accuracy = 0.90
+misclassifications:
+predicted: 1, true: 0
+Beate/raw/Stadtmitte/st_name/20250429_132808.jpg
+predicted: 0, true: 1
+Anna/raw/Feuersee/st_name/20250429_132637.jpg
+predicted: 2, true: 3
+Beate/raw/University/st_name/20250417_110326.jpg
+
+Model does not direct attention to text
+
+
+training & testing only on st_name == False:
+model ViT_8_ep3_seed17_lr2.5e-04_no_st_name
+
+Average Accuracy: 0.86
+misclassifications:
+predicted: 2, true: 0
+Beate/raw/Stadtmitte/no_st_name/20250502_132210.jpg
+predicted: 2, true: 3
+Beate/raw/University/no_st_name/20250515_124939.jpg
+predicted: 1, true: 2
+Berkay/raw/Schwabstrasse/no_st_name/IMG_6691.HEIC
+predicted: 2, true: 0
+Berkay/raw/Stadtmitte/no_st_name/IMG_6695.HEIC
+
+model struggles to predict stadtmitte, likly because stadtmitte only has 10 instances in this category
+
+
+for reference:
+training and testing on all data:
+model ViT_6_ep3_seed17_lr2.5e-04
+
+Average Accuracy: 0.98
+misclassifications:
+predicted: 0, true: 1
+Anna/raw/Feuersee/no_st_name/20250508_134015.jpg
